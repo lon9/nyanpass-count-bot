@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
-	"github.com/ChimeraCoder/anaconda"
-	"github.com/bitly/go-simplejson"
-	"github.com/garyburd/redigo/redis"
 	"io/ioutil"
 	"net/http"
 	"net/url"
+	"nyanpass/Godeps/_workspace/src/github.com/ChimeraCoder/anaconda"
+	"nyanpass/Godeps/_workspace/src/github.com/bitly/go-simplejson"
+	"nyanpass/Godeps/_workspace/src/github.com/garyburd/redigo/redis"
 	"os"
 	"strconv"
 )

@@ -1,0 +1,42 @@
+{
+	"ImportPath": "nyanpass",
+	"GoVersion": "go1.5.1",
+	"Packages": [
+		"./..."
+	],
+	"Deps": [
+		{
+			"ImportPath": "github.com/ChimeraCoder/anaconda",
+			"Rev": "8ce9921eae6a70c5679a746a9f2736f6be587fa9"
+		},
+		{
+			"ImportPath": "github.com/ChimeraCoder/tokenbucket",
+			"Rev": "c5a927568de7aad8a58127d80bcd36ca4e71e454"
+		},
+		{
+			"ImportPath": "github.com/bitly/go-simplejson",
+			"Comment": "v0.4.3-30-g18db6e6",
+			"Rev": "18db6e68d8fd9cbf2e8ebe4c81a78b96fd9bf05a"
+		},
+		{
+			"ImportPath": "github.com/dustin/go-jsonpointer",
+			"Rev": "2efc9fef1d9421a8d252a32e20beb10cecd2bbca"
+		},
+		{
+			"ImportPath": "github.com/dustin/gojson",
+			"Rev": "af16e0e771e2ed110f2785564ae33931de8829e4"
+		},
+		{
+			"ImportPath": "github.com/garyburd/go-oauth/oauth",
+			"Rev": "3131beb69b81ff119923bdefbf029318f1f53794"
+		},
+		{
+			"ImportPath": "github.com/garyburd/redigo/internal",
+			"Rev": "9d4db5d1dbeff473d50e1bb82f5405c8cca0f0ac"
+		},
+		{
+			"ImportPath": "github.com/garyburd/redigo/redis",
+			"Rev": "9d4db5d1dbeff473d50e1bb82f5405c8cca0f0ac"
+		}
+	]
+}
