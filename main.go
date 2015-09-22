@@ -8,6 +8,7 @@ import (
 	"nyanpass/Godeps/_workspace/src/github.com/ChimeraCoder/anaconda"
 	"nyanpass/Godeps/_workspace/src/github.com/bitly/go-simplejson"
 	"nyanpass/Godeps/_workspace/src/github.com/garyburd/redigo/redis"
+	"nyanpass/Godeps/_workspace/src/github.com/soveran/redisurl"
 	"os"
 	"strconv"
 )
@@ -19,9 +20,7 @@ const URLEndpoint = "http://nyanpass.com"
 const GetURL = "http://nyanpass.com/get"
 
 func main() {
-	redisURL := getRedisURL()
-	c, err := redis.Dial("tcp", redisURL)
-	checkErr(err)
+	c := getRedisConn()
 	defer c.Close()
 
 	currentNyanpass := getCurrentNyanpass()
@@ -42,13 +41,17 @@ func main() {
 	fmt.Println(tweet.Text)
 }
 
-func getRedisURL() string {
+func getRedisConn() redis.Conn {
 	if url := os.Getenv("REDIS_URL"); url != "" {
-		return url
+		conn, err := redisurl.ConnectToURL(url)
+		checkErr(err)
+		return conn
 	}
 	hostname, err := os.Hostname()
 	checkErr(err)
-	return hostname + ":6379"
+	conn, err := redis.Dial("tcp", hostname+":6379")
+	checkErr(err)
+	return conn
 }
 
 func getCurrentNyanpass() int64 {
