@@ -34,8 +34,7 @@ func main() {
 
 	api := getTwitterAPI(c)
 	defer api.Close()
-	text := fmt.Sprintf("にゃんぱすー\n今日は%dにゃんぱすーなんなー\n合計%dにゃんぱすなんなー\n%s", diff, currentNyanpass, URLEndpoint)
-	fmt.Println(text)
+	text := fmt.Sprintf("にゃんぱすー\n今日は%dにゃんぱすーなんなー\n合計%dにゃんぱすーなんなー\n%s", diff, currentNyanpass, URLEndpoint)
 	tweet, err := api.PostTweet(text, nil)
 	checkErr(err)
 	fmt.Println(tweet.Text)
