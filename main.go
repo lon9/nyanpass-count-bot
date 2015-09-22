@@ -19,13 +19,8 @@ const URLEndpoint = "http://nyanpass.com"
 const GetURL = "http://nyanpass.com/get"
 
 func main() {
-	hostname, err := os.Hostname()
-	checkErr(err)
-	var port string
-	if port = os.Getenv("REDIS_URL"); port == "" {
-		port = "6379"
-	}
-	c, err := redis.Dial("tcp", hostname+":"+port)
+	redisURL := getRedisURL()
+	c, err := redis.Dial("tcp", redisURL)
 	checkErr(err)
 	defer c.Close()
 
@@ -45,6 +40,15 @@ func main() {
 	tweet, err := api.PostTweet(text, nil)
 	checkErr(err)
 	fmt.Println(tweet.Text)
+}
+
+func getRedisURL() string {
+	if url := os.Getenv("REDIS_URL"); url != "" {
+		return url
+	}
+	hostname, err := os.Hostname()
+	checkErr(err)
+	return hostname + ":6379"
 }
 
 func getCurrentNyanpass() int64 {
