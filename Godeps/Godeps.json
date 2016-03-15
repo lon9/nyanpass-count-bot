@@ -1,17 +1,21 @@
 {
-	"ImportPath": "nyanpass",
-	"GoVersion": "go1.5.1",
+	"ImportPath": "github.com/Rompei/nyanpass-count-bot",
+	"GoVersion": "go1.6",
 	"Packages": [
 		"./..."
 	],
 	"Deps": [
 		{
 			"ImportPath": "github.com/ChimeraCoder/anaconda",
-			"Rev": "8ce9921eae6a70c5679a746a9f2736f6be587fa9"
+			"Rev": "4b2bf11c3f29812ce4507e50d43864e90f0499aa"
 		},
 		{
 			"ImportPath": "github.com/ChimeraCoder/tokenbucket",
 			"Rev": "c5a927568de7aad8a58127d80bcd36ca4e71e454"
+		},
+		{
+			"ImportPath": "github.com/azr/backoff",
+			"Rev": "dd6e01f857f8c114b40c6ce808502a87c58c6816"
 		},
 		{
 			"ImportPath": "github.com/bitly/go-simplejson",
@@ -32,11 +36,11 @@
 		},
 		{
 			"ImportPath": "github.com/garyburd/redigo/internal",
-			"Rev": "9d4db5d1dbeff473d50e1bb82f5405c8cca0f0ac"
+			"Rev": "836b6e58b3358112c8291565d01c35b8764070d7"
 		},
 		{
 			"ImportPath": "github.com/garyburd/redigo/redis",
-			"Rev": "9d4db5d1dbeff473d50e1bb82f5405c8cca0f0ac"
+			"Rev": "836b6e58b3358112c8291565d01c35b8764070d7"
 		},
 		{
 			"ImportPath": "github.com/soveran/redisurl",
